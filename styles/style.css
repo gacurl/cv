@@ -516,7 +516,7 @@ ul li {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
-    flex-direction: row
+    flex-direction: row;
 }
 
 .contact-info ul li .icon-text h3 {
@@ -531,8 +531,8 @@ ul li {
 }
 
 .contact-info a:hover {
-    background: #fff;
-    color: #2c2c2c
+    background: var(--dark-red);
+    color: var(--gold);
 }
 
 .contact-info .socials {
@@ -585,9 +585,7 @@ footer {
     color: #fff;
     border-width: 4px 0 0;
     border-style: solid;
-    -o-border-image: linear-gradient(to left,#38d39f,#3198c0) 1 10%;
-    border-image: -webkit-gradient(linear,right top,left top,from(#38d39f),to(#3198c0)) 1 10%;
-    border-image: linear-gradient(to left,#38d39f,#3198c0) 1 10%;
+    border-image: -webkit-gradient(linear,right top,left top,from(var(--dark-red)),to(var(--bright-red))) 1 10%;
     padding: 1rem 0;
     color: var(--dark-mode-font);
 }
