@@ -394,12 +394,15 @@ ul li {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column
+    flex-direction: column;
+    padding-bottom: 5px;
+    margin-top: 50px;
 }
 
 .contact-form label {
-    padding: 1.5rem 0;
-    font-weight: 500;
+    display: block;
+    padding-top: 1.5rem;
+    font-weight: 700;
     font-size: 3rem;
 }
 
@@ -412,13 +415,13 @@ ul li {
     justify-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
+    /* align-items: left; */
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
     width: 60%;
-    max-height: 60%;
+    /* max-height: 60%; */
 }
 
 .contact-form form input,
@@ -458,7 +461,6 @@ ul li {
     background-color: var(--dark-red);
     color: var(--gold);
     border-color: var(--main-font);
-    
 }
 
 .contact-info {
