@@ -144,6 +144,7 @@ ul a {
 ul a:hover {
     background: var(--dark-red);
     color: var(--gold);
+    font-weight: 500;
 }
 
 ul li {
@@ -461,6 +462,7 @@ ul li {
     background-color: var(--dark-red);
     color: var(--gold);
     border-color: var(--main-font);
+    font-weight: 500;
 }
 
 .contact-info {
@@ -563,6 +565,7 @@ ul li {
 }
 
 .contact-info .socials .li:hover,
+.contact-info .socials .gh:hover,
 .contact-info .socials .twit:hover {
     color: var(--dark-red);
 }
