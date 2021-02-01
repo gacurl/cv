@@ -1,7 +1,7 @@
 //EmailJS
-const btn = document.querySelector('#contact-submit-button');
+const btn = document.getElementById('contact-submit-button');
 
-document.querySelector('#contact-form')
+document.getElementById('contact-form')
     .addEventListener('submit', function (event) {
         event.preventDefault();
 
@@ -17,8 +17,8 @@ document.querySelector('#contact-form')
             }, (err) => {
                 btn.value = 'Send Email';
                 console.log(JSON.stringify(err));
-            }).reset();
-
+            })
+            document.getElementById('contact-form').reset();
     });
 
 // copyright date in footer
