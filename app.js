@@ -10,7 +10,7 @@ document.getElementById('contact-form')
         const serviceID = 'default_service';
         const templateID = 'contact_service_template';
 
-        emailjs.sendForm(serviceID, templateID, this)
+        emailjs.sendForm('service_h5ghf2w', 'template_arg4iws', this)
             .then(() => {
                 btn.value = 'Send Email';
                 console.log('Sent!');
@@ -20,7 +20,7 @@ document.getElementById('contact-form')
             })
             document.getElementById('contact-form').reset();
     });
-
+      
 // copyright date in footer
 document.querySelector("#copyright")
 
