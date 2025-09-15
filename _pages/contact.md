@@ -4,4 +4,4 @@ layout: single
 permalink: /contact/
 ---
 **Email:** you@gregcurl.dev  
-(Optionally add a Calendly link and/or a Formspree form snippet here.)
+(Add Calendly or a Formspree form here if you want.)

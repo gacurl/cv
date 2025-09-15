@@ -1,6 +1,6 @@
 ---
 layout: splash
-title: "Data Engineer | Pipeline Builder"
+title: "Data Engineer · Pipeline Builder"
 header:
   overlay_color: "#000"
   overlay_filter: "0.35"

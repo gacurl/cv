@@ -2,18 +2,22 @@ title: "Greg Curl"
 description: "Data Engineering, Analytics, and Writing"
 url: "https://gregcurl.dev"
 
-remote_theme: "nmistakes/minimal-mistakes"
+remote_theme: "mmistakes/minimal-mistakes"
 
 markdown: kramdown
-permalink: /:categories/:title
-paginate: 6
-paginate_path: /blog/page:num
+permalink: /:categories/:title/
 
+# collections
 collections:
   projects:
     output: true
-    permalink: /projects/:name
+    permalink: /projects/:name/
 
+# include _pages so Blog/About/Contact build
+include:
+  - _pages
+
+# sensible defaults
 defaults:
   - scope: { path: "", type: "posts" }
     values: { layout: single, author_profile: true, read_time: true, share: true }
