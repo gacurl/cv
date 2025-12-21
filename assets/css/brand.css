@@ -1,0 +1,61 @@
+/* ----- CurlTech Brand: Light & Dark ----- */
+/* ----- Light (this is default) ----- */
+:root{
+  --ct-bg:    #F5F036; /* cream */
+  --ct-text:  #0B3D91; /* navy */
+  --ct-muted: #444444; /* body/subtext */
+  --ct-card:  #FAF9F7; /* light panel */
+  --ct-accent:#B7410E; /* rust */
+  --ct-link:  #B7410E;
+  --ct-link-hover: #963200;
+  --ct-shadow: rgba(0,0,0,.08);
+}
+
+/* Dark */
+[data-theme="dark"]{
+  --ct-bg:    #0B3D91;  /* navy */
+  --ct-text:  #F5F0E6;  /* cream */
+  --ct-muted: #D9D5C9;  /* soft cream */
+  --ct-card:  #13285F;  /* lighter navy */
+  --ct-accent:#B7410E;  /* rust */
+  --ct-link:  #F5F0E6;
+  --ct-link-hover:#FFFFFF;
+  --ct-shadow: rgba(0,0,0,.35);
+}
+
+/* Apply palette */
+html, body{
+  background: var(--ct-bg);
+  color: var(--ct-text);
+}
+a {
+  color: var(--ct-link);
+}
+a:hover {
+  color: var(--ct-link-hover);
+}
+
+/* Optional card */
+.ct-card {
+  background: var(--ct-card);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  box-shadow: 0 3px 10px var(--ct-shadow);
+}
+
+/* Floating theme toggle button */
+.ct-theme-toggle{
+  position: fixed; right:16px; bottom:16px;
+  width:46px; height:46px; display:grid; place-items:center;
+  background: var(--ct-card); color: var(--ct-text);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 999px;
+  box-shadow: 0 6px 20px var(--ct-shadow);
+  cursor: pointer; z-index: 9999;
+}
+
+.ct-theme-toggle:hover{
+  transform: translateY(-1px);
+}
+.ct-theme-toggle svg{ width:22px; height:22px; }

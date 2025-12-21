@@ -13,3 +13,8 @@ header:
       url: "/contact/"
 excerpt: "I design reliable ETL/ELT and simple, tested data models."
 ---
+## Now
+
+I’m currently building **HumanityPro** — a Rails app focused on resilient admin workflows, canary testing, and pragmatic production hardening.
+
+{% include theme-toggle.html %}

@@ -1,0 +1,45 @@
+---
+title: "Hardening a Rails Admin Dashboard with Canary Tests"
+date: 2025-12-21
+categories:
+  - rails
+  - testing
+tags:
+  - rails
+  - minitest
+  - regression
+  - admin
+excerpt: "Lightweight canary tests for core admin routes—plus resilience fixes that kept the dashboard from breaking in CI."
+---
+
+## The goal
+
+I wanted lightweight regression (“canary”) tests for core admin flows so changes don’t silently break the app.
+
+These tests are intentionally shallow:
+- sign in as admin
+- hit the route
+- assert the response
+
+That’s it.
+
+## What I covered
+
+I added smoke tests for:
+- admin dashboard root
+- users
+- coaches
+- pending coaches
+- coach details
+
+## What broke (and why that’s a win)
+
+While adding the coach details canary, the admin dashboard exposed real-world breakpoints:
+- missing or renamed associations caused query failures
+- optional features (like profile photos via Active Storage) could break rendering in some environments
+
+Instead of letting admin pages crash, I added safe fallbacks so the dashboard still renders even when optional dependencies or associations aren’t available.
+
+## What’s next
+
+Next up is a non-admin access denial canary, then deployment behind a subdomain so I can start sharing real progress regularly.
