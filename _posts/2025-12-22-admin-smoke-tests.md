@@ -1,5 +1,5 @@
 ---
-title: "Locking Down Admin Pages with Smoke Tests (Milestone 2)"
+title: "2025-01-22 - Locking Down Admin Pages with Smoke Tests (Milestone 2)"
 date: 2025-01-22
 categories:
   - engineering

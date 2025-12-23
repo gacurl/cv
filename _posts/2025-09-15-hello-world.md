@@ -1,5 +1,5 @@
 ---
-title: "Hello, world (portfolio refresh)"
+title: "2025-09-15 Hello, world (portfolio refresh)"
 categories: [updates]
 tags: [site, jekyll]
 ---
