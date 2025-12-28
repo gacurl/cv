@@ -1,0 +1,81 @@
+---
+title: "2025-12-27–28 — Extracting Admin Styles Without Breaking the App"
+date: 2025-12-28
+layout: single
+categories:
+  - engineering
+  - rails
+  - frontend
+tags:
+  - rails
+  - css
+  - refactoring
+  - admin-ui
+  - technical-debt
+---
+
+## The goal
+
+I wanted to clean up how admin styles work **without changing how anything looks or behaves**.
+
+The admin pages were working, but each one had its own `<style>` block stuck in the file. A lot of those styles used very general names like `.container`, `.btn`, or `.status-badge`. That’s fine when everything is isolated, but it’s risky once you try to share CSS across pages.
+
+So the goal wasn’t to redesign the UI.  
+It was to make the styling **predictable and safe to change later**.
+
+---
+
+## What I covered
+
+I went page by page and moved `<style>` blocks into a shared admin stylesheet.
+
+I did this slowly on purpose:
+
+- one page at a time  
+- no visual changes  
+- no Tailwind changes  
+- tests had to stay green after every move  
+
+Over these two days, I migrated styles for:
+
+- sessions  
+- pending coaches (with scoped rules so styles don’t leak)  
+- settings (only the parts that truly belong to that page)  
+
+Each move was small and easy to undo if something went wrong.
+
+---
+
+## What broke (and why that’s a win)
+
+Almost immediately, I ran into a problem that explains *why* this work matters.
+
+Different pages were using the **same class names** to mean different things. If I had copied those styles as-is, one admin page would have quietly changed how another page looked.
+
+Instead of pushing through and fixing things later, I stopped and tightened the scope of those styles so they only apply where they’re supposed to.
+
+That’s the real lesson here:
+
+> CSS bugs aren’t loud. They fail quietly unless you’re careful.
+
+Finding that early is a win.
+
+---
+
+## What I learned
+
+- CSS is part of the system, not decoration  
+- “Working” code can still be fragile  
+- General class names are fine early, but dangerous later  
+- Small, boring commits are safer than big cleanup passes  
+- Tests give you the confidence to move things without fear  
+
+---
+
+## What’s next
+
+There are still a few admin pages with embedded styles left. I’ll keep migrating them using the same approach, saving the biggest and most custom page for last.
+
+Once all the `<style>` blocks are gone, I’ll do a separate pass to clean up inline styles. That’s a different problem, and mixing the two would make things harder to reason about.
+
+The goal is an admin UI that’s easier to understand, easier to change, and harder to accidentally break.
