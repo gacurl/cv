@@ -13,7 +13,7 @@ tags:
   - admin-ui
   - technical-debt
 ---
-
+ 
 ## The goal
 
 I wanted to clean up how admin styles work **without changing how anything looks or behaves**.
