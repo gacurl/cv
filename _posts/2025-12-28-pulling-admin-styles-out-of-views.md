@@ -13,8 +13,7 @@ tags:
   - admin-ui
 ---
 
-## TL;DR
-
+**TL;DR:**
 I moved admin dashboard styles out of individual views and into one shared stylesheet. Nothing was redesigned — this just makes the admin UI safer to change without breaking random pages.
 
 ## The goal
