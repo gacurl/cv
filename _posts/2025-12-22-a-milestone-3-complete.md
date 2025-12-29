@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "2025-12-22-a Milestone 3 Complete — Making HumanityPro Easier to Understand (2025-12-23)"
 date: 2025-12-23
 categories: [humanitypro]
