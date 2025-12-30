@@ -1,5 +1,5 @@
 ---
-title: "2025-12-30 — Cleaning Up the Admin Layout Contract (Issue 4-7)"
+title: "2025-12-30 — Cleaning Up the Admin Layout Contract"
 date: 2025-12-30
 layout: single
 categories:
