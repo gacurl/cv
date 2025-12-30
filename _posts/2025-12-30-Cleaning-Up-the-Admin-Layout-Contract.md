@@ -14,7 +14,6 @@ tags:
 ---
 
 ## TL;DR
-
 I removed standalone HTML boilerplate from admin views so they all rely on the shared admin layout.  
 No redesigns, no behavior changes — just fewer footguns and a cleaner contract.
 
