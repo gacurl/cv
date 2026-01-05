@@ -9,97 +9,87 @@ categories:
 tags:
   - rails
   - observability
-  - refactoring
   - technical-debt
+  - admin-ui
 ---
 
 ## TL;DR
-I finished Milestone 5 by turning the admin UI into something it wasn’t before: **honest**.  
-No hidden writes. No fake buttons. No rescuing errors into silence. Just read-only views that tell the truth.
+Milestone 5 is **mostly complete**.  
+The admin UI is now honest, read-only, and resilient — with one small follow-on issue (5-2) remaining to finish the milestone cleanly.
 
 ---
 
 ## The goal
 
-Milestone 5 was simple to describe and tricky to execute:
+Milestone 5 was about one thing:
 
 > Treat the admin area as an **observability layer**, not a control panel.
 
 That means:
-- no writes
-- no pretending features exist
-- no hiding broken data
-- no “we’ll fix it later” logic leaks
+- no hidden writes
+- no pretend buttons
+- no rescuing errors into silence
+- no UI that implies authority the system doesn’t yet have
 
-If the system can’t safely act yet, the UI shouldn’t lie about it.
+If the platform can’t safely act yet, the admin UI shouldn’t lie about it.
 
 ---
 
-## What actually happened
+## What actually happened today
 
-### 1. Admin buttons lied
-Across multiple views, the admin UI *looked* powerful:
+### 1. Admin buttons lied (so they had to go)
+
+Across multiple admin views, there were actions that *looked* real:
 - approve
 - reject
 - assign
 - message
 - bulk actions
 
-But most of those either:
-- didn’t exist yet, or
-- depended on assumptions the system couldn’t guarantee
+Some were placeholders.  
+Some depended on assumptions the system couldn’t guarantee.  
+None belonged in a read-only observability phase.
 
-So they all had to go.
+So they weren’t disabled or commented out — they were **removed**.
 
-Not disabled.  
-Not commented out.  
-**Removed.**
-
-In their place: clear read-only messaging that explains *why*.
+In their place: explicit messaging that says what the admin *can* and *cannot* do right now.
 
 ---
 
-### 2. Counts were optimistic (and fragile)
-A lot of numbers assumed data was always there:
+### 2. Optimistic data assumptions got cleaned up
 
-```
-@something.count
-@stats[:total]
-@collection.any?
-```
+A lot of the admin UI assumed data would always exist:
+- counts without guards
+- collections assumed non-nil
+- stats read optimistically
+
 That works… until it doesn’t.
 
-Today turned into a small campaign against optimistic assumptions:
-
-- counting things that might not exist
-- reading stats that might be missing
-- asking collections questions when the collection might be nil
-
-The fix was boring but effective:
+Today turned into a small campaign against that optimism:
 - force numbers to be numbers
 - treat missing collections as empty
-- prefer explicit guards over rescuing failures
+- replace rescue-and-hope with explicit guards
 
 Not glamorous — but the admin pages no longer crash or lie when data is missing.
 
 ---
 
-## One syntax error tried to ruin the vibe
+### 3. One syntax error tried to ruin the vibe
 
 At one point:
 - tests were green  
 - then suddenly red  
 - then red again  
 
-Classic ERB problem: a missing `end` hiding at the end of the file.
+Classic ERB problem: a missing `end` hiding at EOF.
 
 Instead of guessing, I stopped, ran the tests, found the exact error, fixed it surgically, and moved on.
 
-That moment alone justified the pace.
+That moment alone justified the slower pace.
 
 ---
 
-## The user profile page was the last boss
+### 4. The user profile page was the last boss
 
 It had everything:
 - action buttons
@@ -110,7 +100,7 @@ It had everything:
 By the end of the day:
 - it’s read-only
 - metrics are safe
-- no fake affordances remain
+- fake affordances are gone
 - admin intent is explicit
 
 It finally matches the rest of the system.
@@ -125,16 +115,30 @@ There are stat blocks begging to be partials.
 There’s repetition.  
 There are obvious cleanups.
 
-But I didn’t.
+But I didn’t — not yet.
 
 Instead:
 - correctness first  
 - safety second  
 - refactor later  
 
-The refactor idea is captured in the backlog, where it belongs.
+Those refactors are captured explicitly as **Issue 5-2**, so they don’t get lost or mixed into behavior changes.
 
 That separation matters.
+
+---
+
+## Where Milestone 5 actually stands
+
+This is the honest status:
+
+- **Issue 5-1:** complete  
+  (Admin made read-only, resilient, and truthful)
+
+- **Issue 5-2:** remaining  
+  (small, intentional cleanup and polish to fully close the milestone)
+
+The finish line is close, but it’s not crossed yet — and that’s okay.
 
 ---
 
@@ -152,9 +156,6 @@ Also: ERB will absolutely humble you if you rush.
 
 ## What’s next
 
-Milestone 5 is done.
+Finish **Issue 5-2**, close Milestone 5 cleanly, then move on with confidence.
 
-Milestone 6 can now start cleanly, without guessing what the admin meant to say.
-
-That’s a good place to stop for the day.
-
+That’s a good place to stop for the day — and a better place to pick back up tomorrow.
