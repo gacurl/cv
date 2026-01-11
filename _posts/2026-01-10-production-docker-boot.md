@@ -1,4 +1,18 @@
-# 2026-01-10 — Production Docker Boot
+---
+title: "2026-01-10 — Production Docker Boot"
+date: 2026-01-10
+layout: single
+categories:
+  - engineering
+  - delivery
+  - infrastructure
+tags:
+  - production
+  - docker
+  - rails
+  - launch
+  - milestones
+---
 
 ## TL;DR
 Built and successfully booted a real production Docker image for HumanityPro. Fixed several production-only failures, verified HTML rendering in a containerized environment, and confirmed the app is deployable to a public host.
