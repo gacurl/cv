@@ -1,5 +1,6 @@
 ---
-title: "2026-01-13 — PlumaFill: Milestone 0 — A Clean Start"
+title: "2026-01-13 — 🪶 PlumaFill: Milestone 0 — A Clean Start"
+
 tags: [plumafill]
 ---
 

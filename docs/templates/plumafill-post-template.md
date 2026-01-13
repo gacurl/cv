@@ -1,5 +1,5 @@
 ---
-title: "YYYY-MM-DD — PlumaFill: Milestone X — Short descriptive title"
+title: "YYYY-MM-DD — 🪶 PlumaFill: Milestone X — Short descriptive title"
 tags: [plumafill]
 ---
 
