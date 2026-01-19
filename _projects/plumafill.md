@@ -54,8 +54,8 @@ The goal is clarity over cleverness, momentum over perfection, and learning by a
 
 ## Links
 
-- **Repo:** (to be added)
-- **Blog series:** Follow posts tagged `plumafill` for build notes, decisions, and lessons learned
+- **Repo (Web):** https://github.com/gacurl/plumafill-web
+- **Blog series:** Follow posts tagged `plumafill` at /tag/plumafill/ for build notes, decisions, and lessons learned
 
 ---
 
