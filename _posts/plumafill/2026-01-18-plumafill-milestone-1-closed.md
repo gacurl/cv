@@ -4,7 +4,7 @@ tags: [plumafill]
 ---
 TL;DR: Milestone 1 is complete, Proof-of-Fun is locked, and the project is ready for real puzzle logic.
 
-**Project page:** /projects/plumafill/
+**Project page:** [/projects/plumafill/](/projects/plumafill/)
 
 ## Context
 Milestone 1 focused on interaction, not correctness. The goal was to validate that the puzzle felt playable and understandable before introducing data models or validation rules.

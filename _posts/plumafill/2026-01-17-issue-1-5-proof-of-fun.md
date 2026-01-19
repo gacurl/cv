@@ -4,7 +4,7 @@ tags: [plumafill]
 ---
 TL;DR: The demo grid is fully interactive, navigable, and usable without instructions.
 
-**Project page:** /projects/plumafill/
+**Project page:** [/projects/plumafill/](/projects/plumafill/)
 
 ## Context
 Milestone 1 exists to answer a single question: is this puzzle fun and understandable before investing in correctness or data models.

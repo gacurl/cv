@@ -6,7 +6,7 @@ tags: [plumafill]
 
 TL;DR: PlumaFill boots in the iOS simulator, Git is clean, and I’ve got a baseline I can trust.
 
-**Project page:** /projects/plumafill/
+**Project page:** [/projects/plumafill/](/projects/plumafill/)
 
 ## Context
 Milestone 0 is intentionally boring: prove the toolchain works, the app runs, and the repo is in a sane state before I start “real work.”
