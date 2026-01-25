@@ -1,6 +1,8 @@
 ---
 title: "2026-01-18 — 🪶 PlumaFill: Milestone 1 — Closed"
-tags: [plumafill]
+date: 2026-01-18
+categories: [projects, plumafill]
+tags: [plumafill, rails, game-dev]
 ---
 TL;DR: Milestone 1 is complete, Proof-of-Fun is locked, and the project is ready for real puzzle logic.
 
