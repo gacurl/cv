@@ -1,5 +1,5 @@
 ---
-title: "Closing the Loop: Slot-Based Validation in PlumaFill"
+title: "2026-01-26 — 🪶Closing the Loop: Slot-Based Validation in PlumaFill"
 date: 2026-01-26
 tags: [plumafill, rails, game-dev, architecture]
 ---
