@@ -1,7 +1,8 @@
 ---
 title: "2026-02-06 — 🚜 AssetTrack: Milestone 4 — Design Pivot and Course Correction"
 date: 2026-02-06
-project: AssetTrack
+project: 
+categories: [projects, assettrack]
 tags: [python, offline-first, barcode-scanning, ux, design-decisions]
 ---
 TL;DR: Milestone 4 didn’t go the way I planned. I made an early design assumption that didn’t hold up, had to rewrite the milestone, add new issues, and work through the pivot deliberately. That work is now complete and the milestone is closed.

@@ -1,7 +1,7 @@
 ---
 title: "🚜 AssetTrack — Milestone 3: Atomic Batch Ingest"
 date: 2026-02-04
-layout: post
+project: AssetTrack
 categories: [projects, assettrack]
 tags: [python, sqlite, offline-first, inventory]
 ---
