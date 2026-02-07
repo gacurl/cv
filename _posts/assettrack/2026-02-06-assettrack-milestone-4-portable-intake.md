@@ -1,7 +1,7 @@
 ---
 title: "2026-02-06 — 🚜 AssetTrack: Milestone 4 — Design Pivot and Course Correction"
 date: 2026-02-06
-project: 
+project: AssetTrack
 categories: [projects, assettrack]
 tags: [python, offline-first, barcode-scanning, ux, design-decisions]
 ---

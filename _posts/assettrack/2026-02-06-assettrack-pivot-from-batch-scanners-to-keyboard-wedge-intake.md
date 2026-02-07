@@ -1,7 +1,8 @@
 ---
 title: "2026-02-06 — 🚜 AssetTrack: Pivot to Keyboard Wedge Intake"
 date: 2026-02-06
-layout: post
+project: AssetTrack
+categories: [projects, assettrack]
 tags: [assettrack, python, containers, systems-design, offline-first]
 ---
 
