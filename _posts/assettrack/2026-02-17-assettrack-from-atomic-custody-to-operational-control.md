@@ -88,10 +88,7 @@ Each one:
 
 ## What Is Now True
 
-The system now behaves like this:
-
-The system now behaves like this:
-
+```
                          +----------------------+
                          |      IN_CUSTODY      |
                          |   (holder-bound)     |
@@ -100,7 +97,6 @@ The system now behaves like this:
                                |         |
                         STOCK_IN|         |STOCK_OUT
                                |         v
-
 +----------------------+     +----------------------+
 |       STORAGE        |<--->|     SLOT MODEL       |
 |    (slot-bound)      |     |  One asset per slot  |
@@ -108,9 +104,10 @@ The system now behaves like this:
 
 Admin Corrections (All Atomic + Logged):
 
-- SLOT_ASSIGN  → STORAGE + slot-bound
-- SLOT_MOVE    → STORAGE, new slot
-- FORCE_VACATE → STORAGE, UNSLOTTED
+  SLOT_ASSIGN  → STORAGE + slot-bound
+  SLOT_MOVE    → STORAGE, new slot
+  FORCE_VACATE → STORAGE, UNSLOTTED
+```
 
 
 There is no path that:
