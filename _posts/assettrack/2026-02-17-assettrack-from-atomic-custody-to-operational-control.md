@@ -88,6 +88,9 @@ Each one:
 
 ## What Is Now True
 
+The system now behaves like this:
+
+
 ```
                          +----------------------+
                          |      IN_CUSTODY      |
