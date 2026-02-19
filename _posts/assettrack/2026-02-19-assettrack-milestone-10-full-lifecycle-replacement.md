@@ -1,151 +1,43 @@
+---
+title: "2026-02-19 — 🚜 AssetTrack: Milestone 10 — Full Lifecycle Replacement"
+date: 2026-02-19
+project: AssetTrack
+categories: [projects, assettrack]
+tags: [assettrack, inventory, lifecycle, atomic-transactions, governance]
+---
 
-This workflow performs three coordinated actions in a single transaction:
+**TL;DR:**  
+Milestone 10 completes the real-world hardware lifecycle. Assets can now be retired and replaced in-place through an atomic swap workflow that preserves slot integrity and audit history. Inventory drift is no longer tolerated.
 
-1. Retire the failed asset  
-2. Create the replacement asset  
-3. Assign the replacement into the same physical slot  
-
-All atomically.
-
-If any step fails, nothing changes.
+Project page: [AssetTrack](/projects/assettrack/).
 
 ---
 
-## Slot is the Anchor
+## Context
 
-The system enforces a simple rule:
+Milestone 9 introduced terminal retirement.
 
-> The slot remains constant.  
-> The asset occupying it changes.
+Assets could be:
+- Retired from STORAGE
+- Retired from IN_CUSTODY
+- Removed cleanly from slots
+- Marked DISPOSED with required failure context
 
-Target slot selection is deterministic:
+That closed the lifecycle.
 
-1. If the failed asset currently occupies a slot → use that slot.
-2. Else if the asset has a home_slot_id → use that.
-3. Else → hard stop with operator guidance.
+But real-world inventory doesn’t just retire hardware.
 
-No guessing.
-No silent fallback.
-No partial swaps.
+It replaces it.
 
----
+When a laptop fails in a deployment case, the slot stays.  
+The hardware changes.
 
-## Supports Field Reality (IN_CUSTODY)
-
-If the failed asset is IN_CUSTODY:
-
-- Retirement occurs in-field.
-- Custody is closed cleanly.
-- No Stock-In required.
-- Replacement proceeds directly into the slot.
-
-This matches how hardware actually fails in deployment environments.
+Milestone 10 implements that reality.
 
 ---
 
-## Atomic Transaction Boundary
+## What Milestone 10 Adds
 
-The swap executes inside a single database transaction:
+### Controlled Swap Workflow
 
-- Retire failed asset (DISPOSED)
-- Clear holder
-- Remove slot occupancy
-- Clear home slot linkage
-- Create replacement asset
-- Assign replacement to target slot
-- Write required audit events
-
-If validation fails at any point:
-
-- Duplicate asset_tag
-- Duplicate serial_number
-- Target slot occupied by another asset
-- Missing target slot
-
-The entire operation rolls back.
-
-No half-swapped systems.
-
----
-
-## Audit Events Written
-
-Every swap produces:
-
-- `ASSET_RETIRED` or `ASSET_RETIRED_IN_FIELD`
-- `ASSET_CREATED`
-- `SLOT_ASSIGN`
-
-The audit trail tells the full story.
-
-No invisible corrections.
-
----
-
-## System Guarantees (Now True)
-
-After Milestone 10:
-
-- Failed assets exit operations cleanly
-- Replacement assets inherit slot position
-- No slot double-occupancy possible
-- No partial lifecycle mutation possible
-- No swap without audit evidence
-- No swap without deterministic slot logic
-- Tests fully passing
-- Docker-compatible runtime preserved
-
-This is lifecycle maturity.
-
----
-
-## What This Means
-
-AssetTrack now supports:
-
-- Intake
-- Slot discipline
-- Custody issuance and return
-- Retirement
-- Replacement swap
-
-That is a complete hardware lifecycle.
-
-Not just tracking.
-
-Governance.
-
----
-
-## What I Learned
-
-Atomicity is not about performance.
-
-It is about trust.
-
-In inventory systems, trust erodes slowly.
-
-Drift starts small:
-- A missing slot update
-- A manual correction
-- A “temporary” swap
-
-Milestone 10 eliminates drift at the point of replacement.
-
-The system enforces reality.
-
----
-
-## What’s Next
-
-Milestone 11 will focus on operational hardening:
-
-- Admin authentication gate
-- Operator documentation
-- Deployment discipline
-
-The lifecycle engine is now complete.
-
-Now we secure and document it.
-
-🚜
+Admin-only route:
