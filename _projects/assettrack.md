@@ -155,5 +155,5 @@ It’s accountability, made explicit.
 
 ## Links
 
-- **Repository:** https://github.com/gacurl/AssetTrack
+- **Repository:** [AssetTrack](https://github.com/gacurl/AssetTrack)
 - **Blog series:** tagged `assettrack`
