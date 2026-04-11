@@ -3,7 +3,7 @@ title: "Projects"
 permalink: /projects/
 ---
 
-Selected case studies.
+Selected case studies and active builds.
 
 {% assign sorted_projects = site.projects | sort: "date" | reverse %}
 
