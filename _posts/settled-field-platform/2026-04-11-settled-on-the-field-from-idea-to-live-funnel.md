@@ -1,5 +1,5 @@
 ---
-title: "2026-04-11 — Settled on the Field: From Idea to Live Funnel"
+title: "2026-04-11 — 🧭 Settled on the Field: From Idea to Live Funnel"
 date: 2026-04-11
 project: Settled on the Field
 categories: [projects, settled-on-the-field]
